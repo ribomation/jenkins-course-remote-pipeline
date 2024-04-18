@@ -1,3 +1,5 @@
+def helper
+
 pipeline {
     agent any
     environment {
@@ -8,6 +10,14 @@ pipeline {
             steps {
                 echo 'Hi there, from a remote Jenkins pipeline'
                 echo env.MESSAGE
+            }
+        }
+        stage('helper') {
+            steps {
+                script {
+                  helper = load 'helper.groovy'
+                  helper.buildDummy('HoolaBandoola')
+                }
             }
         }
     }
