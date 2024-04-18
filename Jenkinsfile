@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script {
                   helper = load 'helper.groovy'
-                  helper.buildDummy('HoolaBandoola')
+                  helper.dummySteps('HoolaBandoola')
                 }
             }
         }
